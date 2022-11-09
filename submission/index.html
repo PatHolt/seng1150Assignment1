@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+	<html lang="en">
+		<!-- index.html file -->
+		<!-- Purpose: To be the frontpage of the Rewind Rentals website. Gives an introduction to the company and some of their best products --> 
+		<!-- Student = Patrick Holt -->
+		<!-- Created = 02/08/2022 -->
+		<!-- Last Edited = 31/08/2022 -->
+		<head>
+			<title>Homepage</title>
+			<link rel="stylesheet" type="text/css" href="reset.css">
+			<link rel="stylesheet" type="text/css" href="style.css">
+			<meta charset= UTF-8 />
+		</head>
+		<body>
+			<header>
+				<h1>Rewind Rentals</h1>
+			</header>
+			<hr>
+			<nav>
+				<a href="index.html">Homepage</a>
+				<a href="about.html">About Us</a>
+				<a href="terms.html" class="rightNav">Terms and Conditions</a> <!-- Using class rightNav to move these 3 navigation options to the right  -->
+				<a href="privacy.html" class="rightNav">Privacy Policy</a>
+				<a href="contact.html" class="rightNav">Contact Us</a>
+			</nav>
+			<hr>
+			<section class="homeSection" style="float: right;"> <!-- Floating this section to the right  -->
+				<h2>Homepage</h2>
+				<div id="welcome">
+					<p>
+						<span>Hello and welcome to <strong>Rewind Rentals</strong>!</span> Here at Rewind Rentals, we offer the cheapest prices for <!-- Using strong to strengthen the name in the opening sentence and span to colour it differently  -->
+						all your entertainment needs from gaming consoles to movies! We have been running our businesses in Sydney, Newcastle and the Central Coast since 1999 
+						and are still going strong. Next year, we are happy to announce that we will be expanding our stores to more locations near you! Some of these new locations
+						are Melbourne, Brisbane, Perth, Adelaide, and Hobart. Sorry Darwin! You're going to have to wait a little longer! 
+					</p>
+				</div>
+				<div id="websiteInfo">
+					<p>
+						We have decided to build a new website to show we are progressing with the times! The website is proudly built by <abbr title="University of Newcastle"><a href="http://www.newcastle.edu.au">UON</a></abbr> student <em>Patrick Holt</em> for his Assignment 1 
+						in <abbr title="Web Technologies"><a href="https://www.newcastle.edu.au/course/SENG1050">SENG1050</a></abbr>. If you'd like to contact Patrick, check out the footer below for his details and send him a message! <!-- Abbreviating UON and SENG1050 and emphasising my name :) as I am the subject  -->
+					</p>
+				</div>
+			</section>
+			<aside> <!-- Chosen to put the most rented products in an aside tag so I can separate it from the main text. I hope this okay. I just thought it looked nicer lol -->
+				<p>
+					Some of our most rented products include:
+				</p>
+				<ul> <!-- Using ul as it isn't a ranking -->
+					<li>Grand Theft Networking
+						<ul>
+							<li>Game of the Year in 2013, 2017 AND 2020</li>
+							<li class="noDot"><img class="rented" id="GTNPoster" src="image/grandTheftNetworking.jpg" alt="Grand Theft Networking Poster"/></li> <!-- Reference for image is located in image folder under README.txt. I use id and class rented to style the image, and noDot to style the remove the dot from the list as it looks ugly-->
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li>Elden Bus-Ring Topology
+						<ul>
+							<li>Game of the Year in 2022</li>
+							<li class="noDot"><img class="rented" id="EBRTPoster" src="image/eldenBusRingTopology.jpg" alt="Elden Bus-Ring Topology Poster"/></li> <!-- Reference for image is located in image folder under README.txt. I use id and class rented to style the image, and noDot to style the remove the dot from the list as it looks ugly-->
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li>The Social Networking
+						<ul>
+							<li>Starring Mark Zuck</li>
+							<li>Won 20 oscars</li>
+							<li class="noDot"><img class="rented" id="TSNPoster" src="image/theSocialNetworking.jpg" alt="The Social Networking Poster"/></li> <!-- Reference for image is located in image folder under README.txt. I use id and class rented to style the image, and noDot to style the remove the dot from the list as it looks ugly-->
+						</ul>
+					</li>
+				</ul>
+			</aside>
+			<hr>
+			<footer>
+				<p>
+					Author: Patrick Holt <br>
+					Contact Information: c3400636@uon.edu.au <br>
+					University: University of Newcastle <br>
+					Studying: Diploma of IT <br>
+					Words from the author: <br>
+				</p>
+				<blockquote> "I'm not entirely sure why I have been chosen for this job. I'm a first year student and I barely know what I'm doing. I'm not trying to be ungrateful, it's just really odd." ~ Patrick Holt</blockquote>
+				
+				<p id="copyright">This entire website is copyright protected by Rewind Rentals LLC. All rights reserved </p> <!--Use the copyright id to style and add the copyright symbol next to the paragraph. The specifications only mentioned the homepage so I didn't add it anywhere else -->
+			</footer>
+		</body>
+	</html>

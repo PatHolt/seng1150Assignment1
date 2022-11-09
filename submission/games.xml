@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- games.xml file -->
+<!-- Student = Patrick Holt -->
+<!-- Created = 02/08/2022 -->
+<!-- Last Edited = 28/08/2022 -->
+
+<!DOCTYPE products [
+	<!ELEMENT product (productName, description, developer?, rentalCost, searchTags*, parentalRating?, productCondition?, extra+, review*, image+, webpage, currentRenter?)>
+		<!ELEMENT productName (pName, delivery) #REQUIRED>
+			<!ELEMENT pName (#CDATA) #REQUIRED> <!--Names may contain symbols so #CDATA is appropriate -->
+				<!ATTLIST pName productID PCDATA #REQUIRED><!--Must produce productIDs for all products to help them have an effective primary key (even if multiple of same product) -->
+			<!ELEMENT delivery (physical | digital)> <!--Must choose physical or digital-->
+				<!ELEMENT physical (#CDATA)> <!--Physical may contain symbols so #CDATA is appropriate (CD & Case, DVD & Case, etc.) -->
+				<!ELEMENT digital (#PCDATA)> <!--Can be in-browser streaming or digital key -->
+					<!ATTLIST digital digitalKey PCDATA> <!--Digital keys shouldn't contain symbols so #PCDATA is appropriate, they may also not be required if weebsite provides this service -->
+		<!ELEMENT description (#CDATA)> <!--Description may contain symbols so #CDATA is appropriate-->
+		<!ELEMENT developer (#CDATA)> <!-- Developer may contain & symbol so #CDATA is appropriate--> 
+		<!ELEMENT rentalCost (#CDATA)> <!--rental cost will contain symbols so #CDATA is appropriate-->
+		<!ELEMENT searchTags (#PCDATA)> <!-- Tags shouldn't have symbols-->
+		<!ELEMENT parentalRating (#PCDATA)> <!--Parental ratings shouldn't have symbols-->
+		<!ELEMENT productCondition (#PCDATA)> 
+		<!ELEMENT extra (name, additionalCost?)> <!--Can contain insurance, and other items-->
+			<!ELEMENT name (#CDATA)> <!---Names may contain symbols so #CDATA is appropriate -->
+			<!ELEMENT additionalCost (#CDATA)> <!---Additional cost may contain symbols so #CDATA is appropriate -->
+		<!ELEMENT review (#CDATA)> <!--Review may contain symbols so #CDATA is appropriate-->
+			<!ATTLIST review byName CDATA> <!--byName may contain symbols so #CDATA is appropriate (company reviews)-->
+		<!ELEMENT image EMPTY> <!--relative path-->
+			<!ATTLIST image source CDATA #REQURIED> <!--source may contain symbols so #CDATA is appropriate (company reviews)-->
+			<!ATTLIST image height CDATA #REQUIRED> <!--height may contain symbols so #CDATA is appropriate (company reviews)-->
+			<!ATTLIST image width CDATA #REQUIRED> <!--width may contain symbols so #CDATA is appropriate (company reviews)-->
+		<!ELEMENT webpage EMPTY> <!--absolute path-->
+			<!ATTLIST webpage url CDATA #REQUIRED> <!--byName may contain symbols so #CDATA is appropriate (company reviews)-->
+		<!ELEMENT currentRenter (currentRenterName, currentRenterMobile+)> <!--Allow knowledge of who is currently renting item-->
+			<!ELEMENT currentRenterName (#PCDATA)>  <!--renter name shouldn't contain symbols so #PCDATA is appropriat -->
+				<!ATTLIST currentRenterName currentRenterID PCDATA> <!--renter ID shouldn't contain symbols so #PCDATA is appropriat -->
+			<!ELEMENT currentRenterMobile (#PCDATA) > <!--mobile shouldn't contain symbols so #PCDATA is appropriat -->
+	<!ENTITY badCondition "Used">
+	<!ENTITY goodCondition "New">
+]>
+
+<product>
+	<productName>
+		<pName productID="000001">Elden Bus-Ring Topology</pName>
+		<delivery>
+			<physical>CD</physical>
+		</delivery>
+	</productName>
+	<description>A fantasy network engineer takes on monsters using his/her networking skills!</description>
+	<developer>From Network INC.</developer>
+	<rentalCost>$10.99</rentalCost>
+	<searchTags>Japanese</searchTags>
+	<searchTags>Difficult</searchTags>
+	<searchTags>Action RPG</searchTags>
+	<parentalRating>R</parentalRating>
+	<productCondition>&goodCondition;</productCondition>
+	<extra>
+		<name>Star topology DLC</name>
+		<additionalCost>$9.99</additionalCost>
+	</extra>
+	<review by="AngryGamer123">1/5 - This is clearly just a rip-off of Elden Ring by just replacing the main character with a network engineer?</review>
+	<image source="/images/" height="0" width="0"/>
+	<webpage url="index.html">
+	<currentRenter>
+		<currentRenterName currentRenterID="000001">John Smith</currentRenterName>
+		<currentRenterMobile>046565656666</currentRenterMobile>
+	</currentRenter>
+</product>
+
+<product>
+	<productName>
+		<pName productID="000002">Grand Theft Networking</pName>
+		<delivery>
+			<digital digitalKey="12CD234-GH23456-PO2853">digital key</digital>
+		</delivery>
+	</productName>
+	<description>You play as a network engineer living his best life in Los Santo by stealing cars, fixing routers, and trying to understand all the complex protocols the city has to offer!</description>
+	<developer>NetStar Games</developer>
+	<rentalCost>$61.99</rentalCost>
+	<searchTags>Cars</searchTags>
+	<searchTags>Networking</searchTags>
+	<searchTags>RPG</searchTags>
+	<parentalRating>R</parentalRating>
+	<productCondition>&badCondition;</productCondition>
+	<extra>
+		<name>Networking Bill ($500,000 in-game credits)</name>
+		<additionalCost>$120.00</additionalCost>
+	</extra>
+	<review by="AngryGamer123">1/5 - Not sure what the go is with all these network/IT based rip-offs of classic games? This is clearly just Grand Theft Auto with some networking aspects added into it!</review>
+	<image source="/images/" height="0" width="0"/>
+	<webpage url="index.html">
+	<currentRenter>
+		<currentRenterName currentRenterID="000002">Martin Freeman</currentRenterName>
+		<currentRenterMobile>0465712666</currentRenterMobile>
+	</currentRenter>
+</product>
+
+<product>
+	<productName>
+		<pName productID="000003">No Woman in the Sky</pName>
+		<delivery>
+			<digital digitalKey="hgf444-ss123gh-1dd54fh">digital key</digital>
+		</delivery>
+	</productName>
+	<description>You play as a woman trying to make her way in the sky</description>
+	<developer>Goodbye Games</developer>
+	<rentalCost>$5</rentalCost>
+	<searchTags>Female</searchTags>
+	<searchTags>Sky</searchTags>
+	<searchTags>JRPG</searchTags>
+	<parentalRating>R</parentalRating>
+	<productCondition>&goodCondition;</productCondition>
+	<extra>
+		<name>More Clothes Cosmetics</name>
+		<additionalCost>$350</additionalCost>
+	</extra>
+	<review by="AngryGamer123">5/5 - Yeah, this one is actually pretty good though</review>
+	<image source="/images/" height="0" width="0"/>
+	<webpage url="index.html">
+	<currentRenter>
+		<currentRenterName currentRenterID="000004">Carl Sinns</currentRenterName>
+		<currentRenterMobile>04558877223</currentRenterMobile>
+	</currentRenter>
+</product>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- movies.xml file -->
+<!-- Student = Patrick Holt -->
+<!-- Created = 02/08/2022 -->
+<!-- Last Edited = 28/08/2022 -->
+
+<!DOCTYPE products [
+	<!ELEMENT product (productName, description, developer?, rentalCost, searchTags*, parentalRating?, productCondition?, extra+, review*, image+, webpage, currentRenter?)>
+		<!ELEMENT productName (pName, delivery)> 
+			<!ELEMENT pName (#CDATA) #REQUIRED> <!--Names may contain symbols so #CDATA is appropriate-->
+				<!ATTLIST pName productID PCDATA #REQUIRED><!--Must produce productIDs for all products to help them have an effective primary key (even if multiple of same product) -->
+			<!ELEMENT delivery (physical | digital)> <!--Must choose physical or digital-->
+				<!ELEMENT physical (#CDATA)> <!--Physical may contain symbols so #CDATA is appropriate (CD & Case, DVD & Case, etc.) -->
+				<!ELEMENT digital (#PCDATA)> <!--Can be in-browser streaming or digital key -->
+					<!ATTLIST digital digitalKey PCDATA> <!--Digital keys shouldn't contain symbols so #PCDATA is appropriate, they may also not be required if weebsite provides this service -->
+		<!ELEMENT description (#CDATA)> <!--Description may contain symbols so #CDATA is appropriate-->
+		<!ELEMENT developer (#CDATA)> <!-- Developer may contain & symbol so #CDATA is appropriate--> 
+		<!ELEMENT rentalCost (#CDATA)> <!--rental cost will contain symbols so #CDATA is appropriate-->
+		<!ELEMENT searchTags (#PCDATA)> <!-- Tags shouldn't have symbols-->
+		<!ELEMENT parentalRating (#PCDATA)> <!--Parental ratings shouldn't have symbols-->
+		<!ELEMENT productCondition (#PCDATA)>
+		<!ELEMENT extra (name, additionalCost?)> <!--Can contain insurance, and other items-->
+			<!ELEMENT name (#CDATA)> <!---Names may contain symbols so #CDATA is appropriate -->
+			<!ELEMENT additionalCost (#CDATA)> <!---Additional cost may contain symbols so #CDATA is appropriate -->
+		<!ELEMENT review (#CDATA)> <!--Review may contain symbols so #CDATA is appropriate-->
+			<!ATTLIST review byName CDATA> <!--byName may contain symbols so #CDATA is appropriate (company reviews)-->
+		<!ELEMENT image EMPTY> <!--relative path-->
+			<!ATTLIST image source CDATA #REQURIED> <!--source may contain symbols so #CDATA is appropriate (company reviews)-->
+			<!ATTLIST image height CDATA #REQUIRED> <!--height may contain symbols so #CDATA is appropriate (company reviews)-->
+			<!ATTLIST image width CDATA #REQUIRED> <!--width may contain symbols so #CDATA is appropriate (company reviews)-->
+		<!ELEMENT webpage EMPTY> <!--absolute path-->
+			<!ATTLIST webpage url CDATA #REQUIRED> <!--byName may contain symbols so #CDATA is appropriate (company reviews)-->
+		<!ELEMENT currentRenter (currentRenterName, currentRenterMobile+)> <!--Allow knowledge of who is currently renting item-->
+			<!ELEMENT currentRenterName (#PCDATA)>  <!--renter name shouldn't contain symbols so #PCDATA is appropriat -->
+				<!ATTLIST currentRenterName currentRenterID PCDATA> <!--renter ID shouldn't contain symbols so #PCDATA is appropriate -->
+			<!ELEMENT currentRenterMobile (#PCDATA) > <!--mobile shouldn't contain symbols so #PCDATA is appropriat -->
+	<!ENTITY badCondition "Used">
+	<!ENTITY goodCondition "New">
+]>
+
+<product>
+	<productName>
+		<pName productID="100001">The Social Networking</pName>
+		<delivery>
+			<physical>DVD</physical>
+		</delivery>
+	</productName>
+	<description>Mark Zuck (Walter Heisenberg) creates a social media network 'NeckWork' whilst ironically backstabbing his friends at every opportunity!</description>
+	<developer>The Metaversus</developer>
+	<rentalCost>$12.99</rentalCost>
+	<searchTags>Mark Zuck</searchTags>
+	<searchTags>Networking</searchTags>
+	<searchTags>Drama</searchTags>
+	<parentalRating>MA</parentalRating>
+	<productCondition>&badCondition;</productCondition>
+	<extra>
+		<name>Commentary from the real Mark Zuck</name>
+	</extra>
+	<review by="LoveMoviesss2">2/5 - NeckWork steals my data and I don't like it</review>
+	<image source="/images/" height="0" width="0"/>
+	<webpage url="index.html">
+	<currentRenter>
+		<currentRenterName currentRenterID="000003">Michael Grasscutter</currentRenterName>
+		<currentRenterMobile>0461172666</currentRenterMobile>
+	</currentRenter>
+</product>
+
+<product>
+	<productName>
+		<pName productID="100002">The Matrix Network</pName>
+		<delivery>
+			<digital>Streaming</digital>
+		</delivery>
+	</productName>
+	<description>Tomothy Antman (Keanu Reeds) plays a network engineer who has trouble taking his pills on-time and leads to funny circumstances.</description>
+	<developer>Warner Sis.</developer>
+	<rentalCost>$23.99</rentalCost>
+	<searchTags>Keanu Reeds</searchTags>
+	<searchTags>Networking</searchTags>
+	<searchTags>Comedy</searchTags>
+	<parentalRating>PG</parentalRating>
+	<productCondition>&goodCondition;</productCondition>
+	<extra>
+		<name>Behind-the-scenes funny clips</name>
+	</extra>
+	<review by="ReedsLover21">5/5 - Another perfect movie starring Keanu Reeds! He just can't go wrong!</review>
+	<image source="/images/" height="0" width="0"/>
+	<webpage url="index.html">
+	<currentRenter>
+		<currentRenterName currentRenterID="000002">Martin Freeman</currentRenterName>
+		<currentRenterMobile>0465712666</currentRenterMobile>
+	</currentRenter>
+</product>
+
+<product>
+	<productName>
+		<pName productID="100002">The Avenger: Backend Developer II</pName>
+		<delivery>
+			<digital>Streaming</digital>
+		</delivery>
+	</productName>
+	<description>The Backend Developer (Jennifer Lawn) is upset about never being appreciated and goes on a murderous rampage because of it!</description>
+	<developer>Dosney Don't Sue Me</developer>
+	<rentalCost>$19.99</rentalCost>
+	<searchTags>Jennifer Lawn</searchTags>
+	<searchTags>Programming</searchTags>
+	<searchTags>Rom-Comedy</searchTags>
+	<searchTags>Action</searchTags>
+	<parentalRating>G</parentalRating>
+	<productCondition>&goodCondition;</productCondition>
+	<extra>
+		<name>Director's Commentary</name>
+	</extra>
+	<review by="ReedsLover21">1/5 - They should have hired Keanu Reeds in the role. Jennifer Lawn just plays herself in every movie!</review>
+	<image source="/images/" height="0" width="0"/>
+	<webpage url="index.html">
+	<currentRenter>
+		<currentRenterName currentRenterID="000005">Rebecca Varet</currentRenterName>
+		<currentRenterMobile>0463212616</currentRenterMobile>
+	</currentRenter>
+</product>

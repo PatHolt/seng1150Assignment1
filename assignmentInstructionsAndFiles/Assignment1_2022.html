@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>SENG1050 - Assignment 1</title>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<style>
+		blockquote { font-style: italic }
+		.late { font-size: medium }
+		.listgroup * { margin-top: 0cm; margin-bottom: 0cm }
+		.warning {color: #ff0000;}
+	</style>
+</head>
+
+<body>
+
+	<div id="body">
+
+        <h1>SENG1050/6051 - Assignment 1</h1>
+
+        <hr />
+
+        <div class="toc">
+          <a href="#outline">Outline</a> -
+          <a href="#template">Template</a> -
+		  <a href="#objects">XML pages</a> -
+          <a href="#web">Web Pages Development</a> -
+          <a href="#submit">Submission</a> -
+          <a href="#marking">Marking</a>
+        </div>
+
+        <hr />
+
+        <ul class="due">
+          <li>Due: 11:59pm, Friday 2nd September, 2022
+            <ul class="late">
+              <li>by 11:59pm, Saturday 3rd September, 2022 = -10%</li>
+              <li>by 11:59pm, Sunday 4th September, 2022 = -20%</li>
+              <li>by 11:59pm, Monday 5th September, 2022 = -30%</li>
+              <li>by 11:59pm, Tuesday 6th September, 2022 = -40%</li>
+              <li>by 11:59pm, Wednesday 7th September, 2022 = -50%</li>
+              <li>after 11:59pm, Wednesday 7th September, 2022 = 0</li>
+            </ul></li>
+          <li>Weight: 15% of course total</li>
+        </ul>
+
+        <p>
+          The objectives of this assignment are to test your ability to create
+          XML documents that contain well-defined information and to develop web pages using HTML with CSS. This assignment will
+          be developed further in Assignment 2.
+        </p>
+
+
+        <div class="warning">
+
+          <h3 id="generated" >Warning - HTML, XML, CSS Generating Tools</h3>
+
+          <p>
+            You are <strong>NOT</strong> allowed to use tools which
+            <em>generate</em> HTML, XML, XSLT or CSS code, either from a visual
+            representation or otherwise. This includes DreamWeaver,
+            Microsoft Frontpage, saving to HTML from MS Word, etc.
+            You must write all code yourself in a <strong><u>plain-text</u></strong>
+            editor such as Notepad++.
+            Any assignments that use code generated from a tool will be given
+            <strong>ZERO</strong>.
+          </p>
+
+
+        </div>
+
+
+        <h2 id="outline">Outline</h2>
+
+        <p>
+The board of directors for an long-running Australian video rental franchise wish to establish a website to remain competitive in an increasingly online entertainment market. Called <em>Rewind Rentals</em>, the business as well as customers can list their home entertainment products for short term rentals under a wide range of categories, such as movies, games, speakers, consoles, screens, and more.</p>
+
+<p> With this in mind, the board has invited you, as a promising student of the University of Newcastle with web communication skills, to develop their web site, <em>Rewind Rentals</em>. They would like you to construct a prototype of the web page to be launched. In particular they would like you to choose TWO of the product categories as listed above and, for each, provide a page listing THREE products for rent. That means that, if you choose movies as a category, your page should list THREE movies for rent.</p>
+<p>
+Note: You can make up your own categories, say for example VR headsets, TV Shows, holographic projectors, e-books, etc. Also, these need not be real products - feel free to make up your own.</p>
+		
+		
+		<p>
+			Your task is to present these products as appealingly as possible on the web. 
+	  This will involve, </p>
+
+        <ol>
+          <li>Creating an <a href="#template">XML template</a> and <a href="#dtd">DTD</a> </li>
+          <li>Creating two <a href="#objects">XML documents</a></li>
+          <li>Developing <a href="#web">several web pages</a> for the site.</li>
+        </ol>
+
+        <p>
+          Details of all these requirements are given below.
+        </p>
+
+        <hr />
+
+		<h2 id="template">XML template</h2>
+        <p>
+			The template will be a <strong>valid</strong> XML file. The important parts here are the tags
+			(the organization of the data), <strong>not the actual data</strong> about any product. 
+			However, you may need to include some arbitrary data to allow your page to be validated. 
+			For example, if the <em>default</em> of an attribute is #REQUIRED, 
+			the attribute needs a value otherwise it will not be validated.
+		</p>
+
+        <h3> XML Specification</h3>
+        <p>
+As the entertainment industry develops and changes around the globe new advances in technology may give rise to new categories of products. For example, further advances in the 'metaverse' are expected to eventually lead to the creation of fully immersive entertainment media. So Jim's IT team, responsible for page updating and maintenance, will need an XML template that they can copy and use for all new categories (i.e. do not hardcode allowed categories into the template). The template will be used for your example products as described below.</p>
+      <p>
+		The document should be able to store as many products as required within a given category. 
+			
+			You will decide the tags that you wish to use to describe the products, 
+			but, for each product, you should at least have element tags for the following items …. 
+	</p> 
+		
+	<ul>
+		<li>Name (only one)</li>
+		<li>Description (only one)</li>
+		<li>Rental cost</li>
+		<li>Search tags (zero or more)</li>
+		<li>Parental Rating (zero or one)</li>
+		<li>Product condition (zero or one)</li>
+		<li>Extras (at least one)
+			<ul>
+				<li>Name</li>
+				<li>Additional cost (or included with product)</li>
+			</ul>
+		</li>
+		<li>Reviews (zero or more)</li>
+		<li>The filename of a picture of the product (one or more, use a relative path)</li>
+		<li>URL of a webpage related to the product (use an absolute path)</li>
+	</ul>        
+	<p>
+			The 'Name' tag should have an attribute that indicates the mode of delivery (physical or digital). If you include only the items mentioned above you will 
+			<strong>NOT</strong> get full marks for the assignment. Please add at least 3 more meaningful tags that make your template different from others. At least one other tag (aside from the 'name' tag) should also have an attribute.
+		</p>
+		
+        <hr />
+
+        <h2 id="dtd">DTD</h2>
+
+        <p>
+          You will also need to write a DTD for your XML. Generally, it is your choice whether the DTD 
+		  is internal or external, however, for this assignment, you should make 
+		  the DTD internal because it is easier to validate your XML and DTD. 
+        </p>
+
+        <p>
+          Your DTD will need to describe all the tags and attributes that you used in your XML. 
+		  It will also be important to use optional modifiers (+, *, ?) to indicate how many 
+		  instances of each tag are allowed. 
+        </p>
+		<p>
+			In your DTD, define at least two entities (&lt;!ENTITY&gt;) and use them in the XML document.
+		</p>
+
+
+        <hr>
+		<h2 id="objects">XML documents</h2>
+
+        <p>
+          Once you have your XML template with DTD, you will need to make 2 separate XML documents.
+        </p>
+		<ul>
+			<li> Choose two categories and</li>
+			<li> Write one XML document for each category.</li>
+			<li> Each XML document should contain <strong>data</strong> for 3 products.</li>
+			<li> Each XML document should contain the internal DTD at the top of the document.</li>
+			<li> The DTDs in 2 XML documents must be the same.</li>
+			<li> The 2 XML documents <strong>MUST</strong> have the same tags and DTD as the XML template.</li>
+		</ul>
+		
+		<hr />
+		
+	<h2 id="web">Page development</h2>
+		<p>
+		You will develop web pages for the <em>Rewind Rentals</em> website. You need to create the following files:<br>
+		</p>
+		
+		<ul>
+		<li><a href="#all">Homepage (index.html)</a></li>
+		<li><a href="#all">About Us (about.html)</a> - Use a template such as from <a href="https://www.impactbnd.com/blog/best-about-us-pages">https://www.impactbnd.com/blog/best-about-us-pages</a></li>
+		<li><a href="#all">Contact  (contact.html)</a> - Follow examples at <a href="https://www.ventureharbour.com/15-contact-form-examples-help-design-ultimate-contact-page/">https://www.ventureharbour.com/15-contact-form-examples-help-design-ultimate-contact-page/</a>. Include options for mail and telephone - as well as a contact form for sending messages.</li>
+		<li><a href="#all">Privacy Policy (privacy.html)</a> - This is necessary as you are collecting data including personal identifying information (PII) from your guests. When creating this, you may use a template such as that at <a href="https://www.visser.com.au/blog/generic-privacy-policy-for-australian-websites/">https://www.visser.com.au/blog/generic-privacy-policy-for-australian-websites/</a></li>
+		<li><a href="#all">Terms and Conditions (terms.html)</a> - Use template at <a href="https://termly.io/resources/templates/terms-and-conditions-template/">https://termly.io/resources/templates/terms-and-conditions-template/</a> and customise for your own site</li>
+		<li><a href="#css">Cascading Style Sheet (style.css)</a></li>
+		</ul>
+		
+		and your site map should look as below.<br />
+			<img src="SiteMap.jpg" alt="Site Map" />
+		
+		
+		<h3 id="all">General requirements </h3>
+		<ul>
+			<li>Pages should be coded according to the HTML Living Standard.</li>
+			<li>Pages should contain the full HTML document structure, including &lt;&#33;DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;title&gt; and &lt;body&gt;</li>
+			<li>Pages should use Cascading Style Sheets (CSS) for visual formatting. You must use one external style file, some document-level styles, and a few (NOT many) inline styles.</li>
+			<li>Your assignment directory should contain a sub-directory, named <em>images</em> with all the image files you are using in your web pages. </li>
+			<li>There should be a nice, non-intrusive background image for all pages.</li>
+			<li>There should be a left side margin of 1 cm.</li>				
+			<li>The pages must have good readability, consistency and navigation. Every page should link to every other page on the site.</li>
+			<li>Using CSS
+				<ul>
+					<li>Use a class attribute and a CSS   .xxx selector to style multiple elements with the same class </li>
+					<li>At least one &lt;div&gt;.  Use CSS to provide some interesting styling for it (your choice of borders, background, floating alignment, etc.)</li>
+					<li>At least one &lt;span&gt;, used to provide some formatting (e.g. a colour or font change) for a few words of text</li>
+				</ul>
+			</li>
+			<li>Comments for your HTML code </li>
+		</ul>
+
+		<h3 id="index">Detailed description for the Homepage </h3>
+		<p>Your submission should contain a homepage, called <em>index.html</em>. This page should contain the following elements 
+		(in addition to the General requirements):</p>
+		
+		<ul>
+			<li>A descriptive title 
+				<ul>
+					<li>The text that appears in the browser window’s title bar.</li>
+				</ul></li>
+			
+			<li>Navigation bar (Menu bar) 
+				<ul>
+					<li>Each page should contain hyperlinks to all other pages.</li>
+					<li>These links should use <em>a relative</em> URL.</li>
+					<li>The text colours of a link before they are visited, after they are visited and 
+					during a user action must be different from each other. A link must appear at least 10% bigger 
+					when you move the cursor over it. (You may choose your own colours but they should be obviously different).</li>
+				</ul></li>		
+					
+			<li>Headings at more than one level, with &lt;h1&gt; formatted to make a nice looking title for the pages.
+				<ul>
+					<li>Level 1 heading appropriate for the homepage.  Centre the heading. </li>
+					<li>The page must have a couple of level 2 headings, which should be underlined.</li>
+					<li>Meaningful headings for each section. All level 1 and 2 headings must be in uppercase and this must be controlled by the external stylesheet.</li>
+				</ul></li>
+			<li>Several paragraphs of text
+				<ul>
+					<li>A paragraph welcoming people to the Web site. This particular paragraph should use a font size larger than other paragraphs. </li>
+					<li>Use a CSS to control at least a few aspects of text rendering (e.g. colour, font-styles, text-align, etc.)</li>
+				</ul></li>
+			<li>List THREE featured products
+				<ul>
+					<li>Use an unordered list or an ordered list</li>
+					<li>Short descriptions for each product (no details needed, they are provided on the product category pages)</li>					
+					<li>One image for each featured product
+						<ul>
+							<li>Use an &lt;img&gt; tag</li>
+							<li>Float them to the left side of the webpage using CSS. Add box information (margin, padding and/or border) to make it look nice on the webpage.  </li>
+							<li>Keep images in the <i>images</i> folder you created. </li>
+						</ul></li>
+				</ul></li>
+			<li>The above mentioned welcoming paragraph and the short description must have some abbreviations.</li>
+			<li>One hyperlink to an external website <i>(eg., http://www.newcastle.edu.au)</i>, but related to the course in some way. This must be <em>an absolute URL</em>.</li>
+			<li>A copyright statement, including information about you, like your name and email address. Your external stylesheet must place the copyright statement on the right bottom corner of the page.</li>
+			<li>Choose some other tags, such as EM, STRONG, P, or BLOCKQUOTE. You can customize those tags in your external style sheet.</li>
+		</ul>
+		
+		<h3 id="form">Contact Form</h3>
+		<p>The contact page (<code>contact.html</code>) should allow visitors to send messages to Rewind Rentals. This will be done as a HTML form, which sends the information using a POST request to https://jkorpela.fi/cgi-bin/echo.cgi when they click the "Submit" button. The following things need to be included on the form:</p>
+		<ul>
+			<li>An appropriate level 2 heading</li>
+			<li>The name of the person sending a message</li>
+			<li>A email address for replies</li>
+			<li>The subject of the message</li>
+			<li>The message itself</li>
+			<li>Whether or not the message should be considered urgent (use two radio buttons for this).</li>
+			<li>Include buttons to submit and clear the form</li>
+			<li>All inputs are required, the form should not submit unless the entire form has been filled out.</li>
+		</ul>
+						
+		<h3 id="css">External Style Sheet</h3>
+		<ul>
+			<li> Once your webpages are written, create an external style sheet (<code>style.css</code>) to define a consistent style for each page. The external style sheet should specify:
+			<ul>
+				<li>The style of a header tag</li>
+				<li>The background image, and the font family, size, and colour for the text</li>
+				<li>The style of the tags you used</li>
+			</ul></li>
+			<li>Use a document-level style for some tags, AND an inline style for some other tags.</li>
+			<li>Use at least one ID and one class selector in CSS. </li>
+		</ul>
+
+		<h3>Coding Style</h3>
+		<p>
+		  Please note that your HTML code, XML code, and CSS code <strong>must</strong> be neat, indented, clear, and commented. Comments are at the top of the file, 
+			stating the name of the file, the name of the author and the date the file was created. Make sure these are comments, 
+		  i.e. they don’t show on the web page, but only when one looks at the source code. An indentation and a clean, organized code is also helpful for you as the designer. </p>
+		<p>Other than the specifications mentioned, the way you design your page is up to you. However it should use semantically-correct tags. </p><p>
+		Your creation should be fully valid HTML and CSS.</p><p>
+		<strong>All code must be your own work. The use of external libraries (such as bootstrap) is not permitted.</strong>
+		</p>
+
+	
+	
+		<p></p>
+
+  
+		<hr>
+		
+		<h3 id="extra">Additional task for SENG6051 students <span style="color: darkorchid">(Bonus marks for SENG1050 students)</span></h3>
+		
+		<p><strong>Advanced navigation bar:</strong></p>
+				<ul>
+					<li>Implement the navigation bar as above, but using a CSS flexbox.</li>
+					<li>The items should appear horizontally, with links aligned on both the left and right sides of the bar.</li>
+					<li>There should be a single item for the product categories which, when hovered over, displays a drop-down menu with links to each of the XML pages.</li>
+					<li>None of the hover effects should cause visible changes in other parts of the navigation bar, for example, changing the position of other links or the size of other items.</li>
+					<li>Refer to the sample below which illustrates what is required for this task: (you don't have to use these specific colours and labels, the layout is what's important here)<br>
+					<img src="navbar.png" alt="Extra credit navbar" width="1000" />
+					<li>This task is required for SENG6051 students (minus 5 marks if this is not completed), however SENG1050 students who complete this task will be awarded 5 bonus marks.</li>
+				</ul>
+		
+		<p></p>		
+		
+		<hr>
+		
+		<h3 id="research">SENG6051 only - Research Task</h3>
+		<p>Consider the following thesis statement:</p>
+		<p><em>The use of HTTP/1.0 by web servers is more secure than HTTP/2 because, for example, it is harder for attackers to sustain a denial of service attack without the ability to abuse persistent connections.</em></p>
+		<p>Write a short essay of 1500 words (± 150 words and not counting front-matter or end-matter) critically evaluating the above statement. Your essay should present arguments for both sides of the argument, should reference current research in the field, and reach a conclusion on whether the statement is valid or not.
+		</p>
+		<p>Your essay should be properly formatted, including an introduction, conclusion, and references (use IEEE referencing style).</p>
+		<p>In addition to the above, your essay will be marked on the depth of your research, your analysis of the literature, and how well you have understood the topic and evaluated the thesis statement.</p>	
+	
+		<p></p>
+
+  
+		<hr>
+
+        <h2 id="submit">Submission</h2>
+
+        <p>
+          Your submission should contain a template file (containing XML and DTD), and the 2 XML files (each XML file contains an internal DTD), html homepage and a CSS file. If there
+          are any other files that are part of your assignment (e.g. graphics files), include those too. You should also 
+		  include a <span class="file">README.txt</span> file,
+          containing your student number, a list of the files that are part
+          of your submission, and references to any external content (such as images) that you have taken from other sources.
+        </p>
+
+        <p>
+          Finally, your submission should include a completed
+          Assignment Cover Sheet. You can download an Assessment Item Cover 
+          Sheet for Individual Assessment from Canvas
+          or from <a href="http://www.newcastle.edu.au/current-students/learning/assessments-and-exams/submitting-an-assessment">
+         SUBMITTING AN ASSESSMENT</a>,
+          then fill in the details and include it with your submission.
+          An Assignment Cover Sheet submitted electronically is deemed to
+          have been signed.
+          Your assignment cannot be marked until a completed cover sheet
+          is received.
+        </p>
+
+        <div class="warning">
+
+          <h3 id="plagiarism">Warning - Plagiarism</h3>
+         <p>
+            Plagiarism is defined as
+            <dfn>presenting the work of others' as if it was your own</dfn>.
+            This includes the copying of content from other people's
+            Web pages (and other sources) without "appropriate referencing"
+            (indicating the parts of your assignment which have been
+            copied and where they were copied from).
+          </p>
+
+          <p>
+            If you "quote" other people's work (or images) in your assignments, then
+            you <strong>must</strong> reference them appropriately (use a README.txt file to do this).
+            Failure to do so will cause you to lose marks for the assignment.
+            An assignment that consists largely of work copied from elsewhere
+            will receive very low (zero) marks, and may be reported to the
+            School for suspicion of plagiarism.
+          </p>
+
+          <p>
+            You can find more information on the University's
+            Policy on Student Academic Integrity in the Course Outline and at
+            <a href="http://www.newcastle.edu.au/about-uon/governance-and-leadership/policy-library">
+            Policy Library</a>
+          </p>
+
+        </div>
+
+        <p>
+          Submission will be via the Modules page on
+          <a href="https://canvas.newcastle.edu.au">Canvas</a>.
+          To submit your files, place them all into a single
+          <span class="file"><strong>.zip</strong></span> archive containing every file and
+          submit it using the Web form in the Assignment 1 area.
+          The <span class="file">.zip</span> archive should be named
+          <span class="file">cXXXXXXX.zip</span> archive where
+          <span class="file">XXXXXXX</span> is replaced by
+          <strong>your</strong> student id.
+        </p>
+
+ 
+
+        <p>
+          Failure to submit correctly is not of itself a sufficient reason
+          to apply for Adverse Circumstances on the assignment.
+          
+        </p>
+
+        <hr>
+
+        <h2 id="marking">Marking Guide</h2>
+
+        <p>
+          
+        </p>
+
+        <ul>
+          <li>Total Marks: 100 (115 for SENG6051 students)
+		  	<ul>
+				<li><a href="#template">XML and DTD Template Page</a>: 25</li>
+				<li><a href="#objects">XML pages</a>: 30</li>
+				<li><a href="#web">HTML pages</a>: 35 </li>
+				<li><a href="#css">CSS</a>: 10 </li>
+				<li><a href="#research">Research Task (SENG6051 only)</a>: 15 </li>
+				<li>You may be penalised for excessively poor aesthetic appearence, untidiness, spelling and grammar problems, and not correctly following instructions</li>
+		  	</ul>
+		  </li>
+<li>Remember, all XML, HTML and CSS pages must be valid. You should check your work before submitting at<br>
+<a href="https://validator.w3.org/">https://validator.w3.org</a> <a href="https://jigsaw.w3.org/css-validator/">https://jigsaw.w3.org/css-validator/</a> for HTML and CSS, and <a href="https://www.xmlvalidation.com/">
+https://www.xmlvalidation.com/</a> for XML.
+</li>	
+        </ul>
+
+</div>
+
+
+</body></html>

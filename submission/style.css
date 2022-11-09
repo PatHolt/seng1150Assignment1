@@ -1,0 +1,230 @@
+/* style.css
+ * Purpose: To add CSS styling to the HTML files
+ * Student: Patrick Holt
+ * Last edited: 31/08/22
+ */
+
+ /* Adds styling to the body*/
+ body {
+    background-image: url('image/backgroundNeon.jpg');
+    margin: 1cm;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #89CFF0;
+}
+
+/* Adds styling to the copyright ID*/
+#copyright {
+    text-align: right;
+    margin-top: 200px;
+}
+
+/* Adds a copyright symbol to the copyright ID*/
+#copyright::after {
+    content: "\00a9";
+}
+
+/* Adds styling to the footer*/
+footer {
+    text-align: center;
+    color: #89CFF0;
+    background-color: #202020;
+    clear: both;
+    padding: 20px;
+    border: 1px solid purple;
+}
+
+/* Adds styling to the section box*/
+section {
+    background-color: #202020;
+    padding-left: 30px;
+    text-align: left;
+    margin: auto;
+    border: 1px solid purple;
+    width: 60%;
+}
+
+/* Adds styling to the aside box*/
+aside {
+    background-color: #202020;
+    padding-left: 25px;
+    text-align: left;
+    float: left;
+    width: 25%;
+    padding-right: 150px;
+    margin-right: 15px;
+    border: 1px solid purple;
+}
+
+/* Adds styling to the blockquote element*/
+blockquote {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Adds styling to the horizontal rule element*/
+hr {
+    clear: both;
+    border: 1px solid purple;
+}
+
+/* Adds styling to level-1 headings*/
+h1 {
+    font-family: Lucida Console;
+    font-size: 128px;
+    font-weight: bolder;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #89CFF0;
+    background-color: #202020;
+    outline: 1px solid purple;
+    width: 95vw;
+    
+}
+
+/* Adds styling to level-2 headings*/
+h2 {
+    font-family: Lucida Console;
+    font-size: 48px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+/* Adds styling to level-3 headings*/
+h3 {
+    font-style: Lucida Console;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+/* Adds styling to span elements*/
+span {
+    color: yellow;
+}
+
+/* Adds styling to paragraph elements*/
+p {
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+/* Adds styling to strong elements*/
+strong {
+    font-weight: bolder;
+    font-family: Lucida Console;
+}
+
+/* Styles navigation bar */
+nav {
+    position: sticky;
+    top: 20px;
+    width: 95vw;
+    height: 8vh;
+    max-height: auto;
+    background-color: #202020;
+    text-align: center;
+    border: 1px solid purple;
+    overflow: hidden;
+}
+
+/* Styles navigation buttons */
+nav a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    width: 20vh;
+    float: left;
+    font-size: 28px;
+    background-color: #202020 ;
+    border: 1px solid purple;
+
+}
+
+/* Changes navigation buttons style when hovered over*/
+nav a:hover {
+    color: white;
+    text-decoration: underline;
+    font-size: 200%;
+    background-color: #2d2d2d;
+
+}
+
+/* Changes navigation buttons style once visited*/
+nav a:visited {
+    color: blue;
+}
+
+/* Changes navigation buttons style upon clicking*/
+nav a:active {
+    color: purple;
+}
+
+/* Moves contact/privacy/terms navigation buttons to the right*/
+nav a.rightNav {
+    float: right;
+}
+
+/* Removes list styles for images*/
+li.noDot {
+    list-style-type: none;
+}
+
+/* TSN image adjustment */
+#TSNPoster {
+    max-height: 50%;
+    max-width: 50%;
+    margin-bottom: 30px;
+}
+
+/* EBRT image adjustment */
+#EBRTPoster {
+    margin-bottom: 30px;
+}
+
+/* GTN image adjustment*/
+#GTNPoster {
+    margin-bottom: 30px;
+}
+
+/* Targets first paragraph of the welcome area for styling*/
+#welcome > p {
+    font-size: 20px;
+    padding-bottom: 50px;
+}
+
+/* Styles form section for a more serious look (just in case of urgency/seriousness of the situation)*/
+#formSection {
+    background-color: #202020;
+    color: white;
+    padding-bottom: 30px;
+}
+
+fieldset {
+    background-color: #202020;
+    border: 1px solid purple;
+}  
+
+legend {
+    background-color: #202020;
+    color: white;
+    margin: 10px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid purple;
+    border-radius: 100%;
+}
+
+input {
+    margin: 5px;
+    padding-top: 5px;
+  }
+
+label {
+    padding-left: 5px;
+}
+
+
